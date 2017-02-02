@@ -34,6 +34,10 @@ class HomeDatasource: Datasource {
         return users.count
     }
     
+    override func numberOfSections() -> Int {
+        return 2
+    }
+    
     override func footerClasses() -> [DatasourceCell.Type]? {
         return [UserFooter.self]
     }

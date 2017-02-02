@@ -19,7 +19,7 @@ class HomeDatasourceController: DatasourceController {
         
         let homeDatasource = HomeDatasource()
         self.datasource = homeDatasource
-        collectionView?.backgroundColor = UIColor(r: 230, g: 230, b: 230)
+        collectionView?.backgroundColor = UIColor(r: 232, g: 236, b: 241)
     }
     
     override func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -49,11 +49,21 @@ class HomeDatasourceController: DatasourceController {
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+        
+        if section == 1  {
+            return .zero
+        }
+        
         return CGSize(width: view.frame.width, height: 50)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForFooterInSection section: Int) -> CGSize {
-        return CGSize(width: view.frame.width, height: 50)
+        
+        if section == 1 {
+            return .zero
+        }
+        
+        return CGSize(width: view.frame.width, height: 50 + footerBottomMargin)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {

@@ -10,3 +10,4 @@ import LBTAComponents
 
 let twitterBlue = UIColor(r: 61, g: 167, b: 244)
 let padding: CGFloat = 12
+let footerBottomMargin: CGFloat = 14
