@@ -22,7 +22,7 @@ class UserHeader: DatasourceCell {
         
         backgroundColor = .white
         separatorLineView.isHidden = false
-        separatorLineView.backgroundColor = UIColor(r: 230, g: 230, b: 230)
+        separatorLineView.backgroundColor = separatorColor
         
         addSubview(textLabel)
         textLabel.anchor(topAnchor, left: leftAnchor, bottom: bottomAnchor, right: rightAnchor, topConstant: 0, leftConstant: padding, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: 0)

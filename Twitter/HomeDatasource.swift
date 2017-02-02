@@ -18,12 +18,14 @@ class HomeDatasource: Datasource {
         return [ryanUser, brianUser, rayUser]
     }()
     
+    let tweets = ["tweet1", "tweet2"]
+    
     override func headerClasses() -> [DatasourceCell.Type]? {
         return [UserHeader.self]
     }
     
     override func cellClasses() -> [DatasourceCell.Type] {
-        return [UserCell.self]
+        return [UserCell.self, TweetCell.self]
     }
     
     override func item(_ indexPath: IndexPath) -> Any? {
@@ -31,6 +33,11 @@ class HomeDatasource: Datasource {
     }
     
     override func numberOfItems(_ section: Int) -> Int {
+        //(zero indexed) section 2
+        if section == 1 {
+            return tweets.count
+        }
+        
         return users.count
     }
     
