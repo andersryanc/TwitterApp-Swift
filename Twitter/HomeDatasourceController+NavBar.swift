@@ -43,6 +43,16 @@ extension HomeDatasourceController {
         
         navigationController?.navigationBar.backgroundColor = .white
         navigationController?.navigationBar.isTranslucent = false
+        
+        // Remove the shadow / line at bottom of navbar
+        navigationController?.navigationBar.shadowImage = UIImage()
+        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        
+        // Add custom bottom separator to bottom of navbar
+        let navBarSeparatorView = UIView()
+        navBarSeparatorView.backgroundColor = separatorColor
+        view.addSubview(navBarSeparatorView)
+        navBarSeparatorView.anchor(view.topAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: 0.5)
     }
     
 }
