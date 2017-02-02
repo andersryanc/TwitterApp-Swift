@@ -35,8 +35,8 @@ class HomeDatasourceController: DatasourceController {
             
             let estimatedFrame = NSString(string: user.bioText).boundingRect(with: size, options: .usesLineFragmentOrigin, attributes: attributes, context: nil)
             
-            // bioText + topPadding + nameLabel.height + usernameLabel.height + bottomPadding + littleExtraForTextView
-            let estimatedHeight = estimatedFrame.height + padding + 20 + 20 + padding + 4
+            // bioText + topPadding + nameLabel.height + usernameLabel.height + bottomPadding + littleExtraForTextViewInsets
+            let estimatedHeight = estimatedFrame.height + padding + 20 + 20 + padding + 2
             
             return CGSize(width: view.frame.width, height: estimatedHeight)
         }

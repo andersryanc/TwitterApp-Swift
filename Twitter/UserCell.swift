@@ -49,6 +49,8 @@ class UserCell: DatasourceCell {
         textView.font = UIFont.systemFont(ofSize: 15)
         textView.backgroundColor = .clear
         textView.isEditable = false
+        textView.isScrollEnabled = false
+        textView.textContainerInset = UIEdgeInsets(top: 4, left: 0, bottom: 0, right: 0)
         return textView
     }()
     
