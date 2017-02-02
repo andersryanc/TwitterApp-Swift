@@ -10,7 +10,13 @@ import LBTAComponents
 
 class HomeDatasource: Datasource {
     
-    let words = ["Ryan Anderson", "Ryan Anderson", "Ryan Anderson"]
+    let users: [User] = {
+        let ryanUser = User(profileImage: UIImage(named: "ryan-1")!, name: "Ryan Anderson", username: "@andersryanc", bioText: "I like to watch movies and eat pizza!!")
+        let brianUser = User(profileImage: UIImage(named: "brian")!, name: "Brian Voong", username: "@bulidthatapp", bioText: "Learning swift is really easy and fun. Join me on YouTube to learn more about iOS and programming in Swift!")
+        let rayUser = User(profileImage: UIImage(named: "ray")!, name: "Ray Wenderlich", username: "@rwenderlich", bioText: "Ray Wenderlich is an iPhone developer and tweets on topics related to iPhone, software, and gaming. Check out our conference!")
+        
+        return [ryanUser, brianUser, rayUser]
+    }()
     
     override func headerClasses() -> [DatasourceCell.Type]? {
         return [UserHeader.self]
@@ -21,11 +27,11 @@ class HomeDatasource: Datasource {
     }
     
     override func item(_ indexPath: IndexPath) -> Any? {
-        return words[indexPath.item]
+        return users[indexPath.item]
     }
     
     override func numberOfItems(_ section: Int) -> Int {
-        return words.count
+        return users.count
     }
     
     override func footerClasses() -> [DatasourceCell.Type]? {
