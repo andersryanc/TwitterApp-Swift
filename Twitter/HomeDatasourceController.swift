@@ -10,6 +10,8 @@ import LBTAComponents
 
 class HomeDatasourceController: DatasourceController {
     
+    let navItemRect = CGRect(x: 0, y: 0, width: 34, height: 34)
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -18,33 +20,6 @@ class HomeDatasourceController: DatasourceController {
         let homeDatasource = HomeDatasource()
         self.datasource = homeDatasource
         collectionView?.backgroundColor = UIColor(r: 230, g: 230, b: 230)
-    }
-    
-    private func setupNavBarItems() {
-        let rect = CGRect(x: 0, y: 0, width: 34, height: 34)
-        
-        let titleImageView = UIImageView(image: #imageLiteral(resourceName: "title_icon"))
-        titleImageView.frame = rect
-        titleImageView.contentMode = .scaleAspectFit
-        navigationItem.titleView = titleImageView
-        
-        let followButton = UIButton(type: .system)
-        followButton.setImage(#imageLiteral(resourceName: "follow").withRenderingMode(.alwaysOriginal), for: .normal)
-        followButton.frame = rect
-        navigationItem.leftBarButtonItem = UIBarButtonItem(customView: followButton)
-        
-        let searchButton = UIButton(type: .system)
-        searchButton.setImage(#imageLiteral(resourceName: "search").withRenderingMode(.alwaysOriginal), for: .normal)
-        searchButton.frame = rect
-        
-        let composeButton = UIButton(type: .system)
-        composeButton.setImage(#imageLiteral(resourceName: "compose").withRenderingMode(.alwaysOriginal), for: .normal)
-        composeButton.frame = rect
-        
-        navigationItem.rightBarButtonItems = [UIBarButtonItem(customView: composeButton), UIBarButtonItem(customView: searchButton)]
-        
-        navigationController?.navigationBar.backgroundColor = .white
-        navigationController?.navigationBar.isTranslucent = false
     }
     
     override func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
